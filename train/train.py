@@ -39,7 +39,7 @@ def evaluate(model,
             output = model(X_batch)
             # y_batch = y_batch.unsqueeze(1).to(torch.float32)
 
-            losses.append(criterion(output, y_batch))
+            losses.append(criterion(output, y_batch).cpu().detach().numpy())
             if eval_metric is not None:
                 scores.append(eval_metric(y_batch.cpu().detach().numpy(), 
                                             output.argmax(1).cpu().detach().numpy()))
