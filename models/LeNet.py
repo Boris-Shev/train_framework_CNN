@@ -6,7 +6,7 @@ import wandb
 
 class LeNet(nn.Module):
     def __init__(self, num_channels=1, num_classes=10):
-        super(LeNet, self).__init__()
+        super(self).__init__()
         # 1 input image channel, 6 output channels, 3x3 square conv kernel
         self.conv1 = nn.Conv2d(num_channels, 6, 5) # in: num_channels*28*28   out: 6*24*24
         self.bn2d1 = BatchNorm2d(6)
