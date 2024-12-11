@@ -6,7 +6,7 @@ import wandb
 
 class AlexNet(nn.Module):
     def __init__(self, num_channels=3, num_classes=1000):
-        super(self).__init__()
+        super().__init__()
         self.conv1 = nn.Sequential(
             nn.Conv2d(num_channels, 96, 11, stride=4), # in: num_channels*224*224   out: 96*54*54
             BatchNorm2d(96),
